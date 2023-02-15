@@ -65,6 +65,8 @@ async function checkIfValid() {
 
 // Handle enter
 function handleEnter() {
+  currentGuess = currentGuess.toLowerCase();
+  correctWord = correctWord.toLowerCase();
   // make arrays out of the guess and the word of the day
   let currentGuessArray = currentGuess.split("");
   let correctWordArray = correctWord.split("");

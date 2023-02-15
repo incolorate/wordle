@@ -83,6 +83,9 @@
   display: flex;
   flex-direction: column;
 }
+.end-modal > * {
+  background: none;
+}
 .end-modal h1 {
   text-align: center;
   font-size: 48px;
