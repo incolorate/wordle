@@ -15,6 +15,7 @@ function writing(e) {
   }
 }
 
+// Limit the typing to letters
 function checkIfLetter(e) {
   if (e.keyCode <= 122 && e.keyCode >= 97) {
     return true;
@@ -70,7 +71,7 @@ function handleEnter() {
     for (i = 0; i < WORD; i++) {
       textBox[row * WORD + i].classList.add("correct");
     }
-    alert("you win");
+    handleWin();
   } else if (currentGuess.length === WORD) {
     for (i = 0; i < WORD; i++) {
       for (j = 0; j < WORD; j++) {
@@ -91,6 +92,23 @@ function handleEnter() {
   if (row === 6 && currentGuess !== correctWord) {
     alert(`you lose the word was: ${correctWord}`);
   }
+}
+
+//  Handle wining
+function handleWin() {
+  let wordText = document.createElement("p");
+  let rowText = document.createElement("p");
+  let winModal = document.querySelector(".win-modal");
+  if (row === 0) {
+    wordText.innerText = `You correctly guessed the word in ${row + 1} try.`;
+  } else {
+    wordText.innerText = `You correctly guessed the word in ${row + 1} tries.`;
+  }
+
+  rowText.innerText = `The word was ${correctWord}`;
+  winModal.classList.remove("hidden");
+  winModal.append(wordText);
+  winModal.append(rowText);
 }
 
 document.addEventListener("load", getWord());
