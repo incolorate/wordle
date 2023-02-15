@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  background-color: black;
+  background-color: #27272a;
 }
 
 /* Title */
@@ -65,7 +65,7 @@
   background-color: orange;
 }
 .not-included {
-  background-color: gray;
+  background-color: rgb(177, 173, 173);
 }
 
 .invalid {
@@ -85,9 +85,7 @@
 }
 .end-modal h1 {
   text-align: center;
-
   font-size: 48px;
-  background-color: none;
 }
 .win {
   color: #16a34a;
@@ -122,6 +120,7 @@ form {
   text-align: center;
   font-size: 52px;
 }
+
 @media only screen and (min-width: 500px) {
   .keyboard {
     width: 50px;

@@ -65,21 +65,24 @@ async function checkIfValid() {
 
 // Handle enter
 function handleEnter() {
+  // make arrays out of the guess and the word of the day
   let currentGuessArray = currentGuess.split("");
   let correctWordArray = correctWord.split("");
   if (currentGuess === correctWord) {
-    // for (i = 0; i < WORD; i++) {
-    //   textBox[row * WORD + i].classList.add("correct");
-    // }
-    // handleWin();
+    for (i = 0; i < WORD; i++) {
+      // if correct word -> win
+      textBox[row * WORD + i].classList.add("correct");
+    }
+    handleWin();
   } else if (currentGuess.length === WORD) {
     for (i = 0; i < WORD; i++) {
       if (!correctWordArray.includes(currentGuess[i])) {
+        // Gray if letter is not included in the word
         textBox[row * WORD + i].classList.add("not-included");
       }
       for (j = 0; j < WORD; j++) {
-        // same place -> green
         if (currentGuessArray[i] === correctWordArray[i]) {
+          // same place -> green
           textBox[row * WORD + i].classList.add("correct");
           currentGuessArray[i] = "";
           correctWordArray[i] = "";
@@ -92,15 +95,17 @@ function handleEnter() {
       }
     }
   }
-
+  // move to next row
   row++;
+  // reset guess
   currentGuess = "";
   if (row === 6 && currentGuess !== correctWord) {
+    // display end game screen
     handleLoss();
   }
 }
 
-//  Handle wining
+//  Display winning screen
 let resetButton = document.querySelector(".reset-button");
 function handleWin() {
   let wordText = document.createElement("p");
@@ -117,8 +122,10 @@ function handleWin() {
   congratulations.classList.add("win");
   winModal.append(congratulations, wordText, rowText);
   winModal.classList.remove("hidden");
+  resetButton.classList.remove("hidden");
 }
 
+// Display losing screen
 function handleLoss() {
   let youLose = document.createElement("h1");
   let wordText = document.createElement("p");
@@ -131,6 +138,7 @@ function handleLoss() {
   resetButton.classList.remove("hidden");
 }
 
+// Init game
 document.addEventListener("load", getWord());
 document.addEventListener("keyup", (e) => {
   if (checkIfLetter(e)) {
