@@ -130,7 +130,7 @@ form {
 .keyboard {
   display: grid;
   gap: 3px;
-  padding:3px
+  padding:3px;
   grid-template-columns: repeat(10, 1fr);
 }
 .key {
