@@ -1,5 +1,4 @@
 let textBox = document.querySelectorAll(".textBox");
-let keyBoard = document.querySelector(".keyboard");
 let WORD = 5;
 
 let row = 0;
@@ -140,6 +139,62 @@ function handleLoss() {
   resetButton.classList.remove("hidden");
 }
 
+// Keyboard
+
+const keyBoard = () => {
+  let keyB = [
+    "q",
+    "w",
+    "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "enter",
+    "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
+    "←",
+  ];
+
+  const keyBoardContainer = document.querySelector(".keyboard");
+
+  for (let i = 0; i < keyB.length; i++) {
+    let key = document.createElement("button");
+    key.innerText = keyB[i].toUpperCase();
+    key.classList.add("key");
+    key.setAttribute(`value`, `${keyB[i]}`);
+    key.setAttribute(`id`, `${keyB[i]}`);
+    keyBoardContainer.append(key);
+    key.onclick = () => {
+      if (key.value === "←") {
+        handleBackSpace();
+      } else if (currentGuess.length < WORD) {
+        currentGuess += key.value;
+        textBox[row * WORD + currentGuess.length - 1].innerText = key.value;
+      } else if (key.value === "enter") {
+        checkIfValid();
+      }
+    };
+  }
+};
+
 // Init game
 document.addEventListener("load", getWord());
 document.addEventListener("keyup", (e) => {
@@ -151,3 +206,4 @@ document.addEventListener("keyup", (e) => {
     checkIfValid();
   }
 });
+keyBoard();
