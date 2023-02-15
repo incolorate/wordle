@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.title {
+  color: antiquewhite;
+  text-align: center;
+}
+
+.separator {
+  width: 100%;
+  background-color: antiquewhite;
+  height: 1px;
+}
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  width: auto;
+}
+
+.textBox {
+  width: 50px;
+  height: 50px;
+  border: 2px white solid;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.correct {
+  background-color: green;
+}
+.close {
+  background-color: orange;
+}
+
+.invalid {
+  background-color: red;
+}
+
+@media only screen and (min-width: 500px) {
+  .keyboard {
+    width: 50px;
+    height: 50px;
+  }
+}
