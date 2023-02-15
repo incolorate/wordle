@@ -101,6 +101,7 @@ function handleEnter() {
 }
 
 //  Handle wining
+let resetButton = document.querySelector(".reset-button");
 function handleWin() {
   let wordText = document.createElement("p");
   let rowText = document.createElement("p");
@@ -127,6 +128,7 @@ function handleLoss() {
   youLose.classList.add("lose");
   lossModal.append(youLose, wordText);
   lossModal.classList.remove("hidden");
+  resetButton.classList.remove("hidden");
 }
 
 document.addEventListener("load", getWord());

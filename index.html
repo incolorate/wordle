@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The word game</title>
+    <title>Wordle</title>
     <link href="./styles.css" rel="stylesheet" />
   </head>
   <body>
     <section>
-      <h1 class="title">Wordle Clone</h1>
+      <h1 class="title">Wordle</h1>
       <div class="separator"></div>
     </section>
 
     <section class="game-area">
       <div class="end-modal hidden">
-        <button type="submit" id="play-again">Play again</button>
+        <form>
+          <button type="submit" class="reset-button" id="play-again">
+            Play again
+          </button>
+        </form>
       </div>
+
       <div class="game-board">
         <div class="textBox"></div>
         <div class="textBox"></div>

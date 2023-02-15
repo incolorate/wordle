@@ -80,6 +80,8 @@
   top: 0;
   background-color: rgba(0, 0, 0, 0.9);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .end-modal h1 {
   text-align: center;
@@ -102,6 +104,23 @@
 
 .lose {
   color: red;
+}
+/* Modal reset button */
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 3;
+  margin-top: 100px;
+}
+
+.reset-button {
+  width: 300px;
+  height: 75px;
+  background-color: #fbbf24;
+  font-family: fantasy;
+  text-align: center;
+  font-size: 52px;
 }
 @media only screen and (min-width: 500px) {
   .keyboard {
