@@ -90,7 +90,7 @@ function handleEnter() {
     currentGuess = "";
   }
   if (row === 6 && currentGuess !== correctWord) {
-    alert(`you lose the word was: ${correctWord}`);
+    handleLoss();
   }
 }
 
@@ -98,17 +98,32 @@ function handleEnter() {
 function handleWin() {
   let wordText = document.createElement("p");
   let rowText = document.createElement("p");
-  let winModal = document.querySelector(".win-modal");
+  let winModal = document.querySelector(".end-modal");
+  let congratulations = document.createElement("h1");
   if (row === 0) {
-    wordText.innerText = `You correctly guessed the word in ${row + 1} try.`;
+    rowText.innerText = `You correctly guessed the word in ${row + 1} try.`;
   } else {
-    wordText.innerText = `You correctly guessed the word in ${row + 1} tries.`;
+    rowText.innerText = `You correctly guessed the word in ${row + 1} tries.`;
   }
-
-  rowText.innerText = `The word was ${correctWord}`;
-  winModal.classList.remove("hidden");
+  wordText.innerText = `The word was ${correctWord}`;
+  congratulations.innerText = `Congratulations!`;
+  congratulations.classList.add("win");
+  winModal.append(congratulations);
   winModal.append(wordText);
   winModal.append(rowText);
+  winModal.classList.remove("hidden");
+}
+
+function handleLoss() {
+  let youLose = document.createElement("h1");
+  let wordText = document.createElement("p");
+  let lossModal = document.querySelector(".end-modal");
+  wordText.innerText = `The word was: ${correctWord}`;
+  youLose.innerText = `You lost! :( `;
+  youLose.classList.add("lose");
+  lossModal.append(youLose);
+  lossModal.append(wordText);
+  lossModal.classList.remove("hidden");
 }
 
 document.addEventListener("load", getWord());

@@ -52,7 +52,7 @@
 }
 
 /* If win */
-.win-modal {
+.end-modal {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -60,13 +60,16 @@
   background-color: rgba(0, 0, 0, 0.9);
   overflow: hidden;
 }
-.win-modal h1 {
+.end-modal h1 {
   text-align: center;
-  color: #16a34a;
+
   font-size: 48px;
   background-color: none;
 }
-.win-modal p {
+.win {
+  color: #16a34a;
+}
+.end-modal p {
   font-size: 24px;
   color: azure;
   text-align: center;
@@ -76,6 +79,9 @@
   display: none;
 }
 
+.lose {
+  color: red;
+}
 @media only screen and (min-width: 500px) {
   .keyboard {
     width: 50px;
