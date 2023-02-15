@@ -129,7 +129,8 @@ form {
 /* Key board */
 .keyboard {
   display: grid;
-  gap: 1px;
+  gap: 3px;
+  padding:3px
   grid-template-columns: repeat(10, 1fr);
 }
 .key {
