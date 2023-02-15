@@ -57,12 +57,15 @@
   font-size: 30px;
   text-transform: uppercase;
 }
-
+/* Checking the text */
 .correct {
   background-color: green;
 }
 .close {
   background-color: orange;
+}
+.not-included {
+  background-color: gray;
 }
 
 .invalid {
@@ -113,5 +116,10 @@
   }
   .title {
     font-size: 62px;
+  }
+  .textBox {
+    width: 75px;
+    height: 75px;
+    font-size: 42px;
   }
 }

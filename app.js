@@ -7,7 +7,7 @@ let currentGuess = "";
 let correctWord; // this is the correct
 let isWord;
 
-//  Handndle all typing
+//  Handle all typing
 function writing(e) {
   if (currentGuess.length < WORD) {
     currentGuess += e.key;
@@ -41,7 +41,7 @@ async function getWord() {
   correctWord = response.word;
 }
 
-// Check if the submited word exists flash in red if invalid
+// Check if the submitted word exists flash in red if invalid
 async function checkIfValid() {
   let sendWord = await fetch("https://words.dev-apis.com/validate-word", {
     method: "POST",
@@ -68,27 +68,33 @@ function handleEnter() {
   let currentGuessArray = currentGuess.split("");
   let correctWordArray = correctWord.split("");
   if (currentGuess === correctWord) {
-    for (i = 0; i < WORD; i++) {
-      textBox[row * WORD + i].classList.add("correct");
-    }
-    handleWin();
+    // for (i = 0; i < WORD; i++) {
+    //   textBox[row * WORD + i].classList.add("correct");
+    // }
+    // handleWin();
   } else if (currentGuess.length === WORD) {
     for (i = 0; i < WORD; i++) {
+      if (!correctWordArray.includes(currentGuess[i])) {
+        textBox[row * WORD + i].classList.add("not-included");
+      }
       for (j = 0; j < WORD; j++) {
+        // same place -> green
         if (currentGuessArray[i] === correctWordArray[i]) {
           textBox[row * WORD + i].classList.add("correct");
           currentGuessArray[i] = "";
           correctWordArray[i] = "";
         } else if (currentGuessArray[i] === correctWordArray[j] && i !== j) {
+          // different place -> orange
           textBox[row * WORD + i].classList.add("close");
           currentGuessArray[i] = "";
           correctWordArray[j] = "";
         }
       }
     }
-    row++;
-    currentGuess = "";
   }
+
+  row++;
+  currentGuess = "";
   if (row === 6 && currentGuess !== correctWord) {
     handleLoss();
   }
@@ -108,9 +114,7 @@ function handleWin() {
   wordText.innerText = `The word was ${correctWord}`;
   congratulations.innerText = `Congratulations!`;
   congratulations.classList.add("win");
-  winModal.append(congratulations);
-  winModal.append(wordText);
-  winModal.append(rowText);
+  winModal.append(congratulations, wordText, rowText);
   winModal.classList.remove("hidden");
 }
 
@@ -121,8 +125,7 @@ function handleLoss() {
   wordText.innerText = `The word was: ${correctWord}`;
   youLose.innerText = `You lost! :( `;
   youLose.classList.add("lose");
-  lossModal.append(youLose);
-  lossModal.append(wordText);
+  lossModal.append(youLose, wordText);
   lossModal.classList.remove("hidden");
 }
 
