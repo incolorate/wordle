@@ -43,6 +43,7 @@
 
 .game-board {
   display: grid;
+  width: 600px;
   grid-template-columns: repeat(5, 1fr);
   gap: 7px;
   width: auto;
@@ -129,24 +130,19 @@ form {
 /* Key board */
 .keyboard {
   display: grid;
+  width: 90%;
+  max-width: 600px;
   gap: 3px;
-  padding:3px
   grid-template-columns: repeat(10, 1fr);
 }
 .key {
-  width: 90%;
+  text-align: center;
   background-color: gray;
   color: white;
-  font-size: 1.5rem;
-  font-family: fantasy;
-  display: grid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1rem;
+  height: 58px;
 }
-#enter {
-  font-size: 0.8rem;
-}
+
 #z {
   grid-column: 2/3;
 }
@@ -165,5 +161,8 @@ form {
     width: 75px;
     height: 75px;
     font-size: 42px;
+  }
+  .key {
+    font-size: 1.5rem;
   }
 }

@@ -162,7 +162,7 @@ const keyBoard = () => {
     "j",
     "k",
     "l",
-    "enter",
+    "⏎",
     "z",
     "x",
     "c",
@@ -185,11 +185,11 @@ const keyBoard = () => {
     key.onclick = () => {
       if (key.value === "←") {
         handleBackSpace();
+      } else if (key.value === "⏎") {
+        checkIfValid();
       } else if (currentGuess.length < WORD) {
         currentGuess += key.value;
         textBox[row * WORD + currentGuess.length - 1].innerText = key.value;
-      } else if (key.value === "enter") {
-        checkIfValid();
       }
     };
   }
