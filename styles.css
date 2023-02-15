@@ -133,10 +133,6 @@ form {
   width: 90%;
   max-width: 600px;
   gap: 3px;
-<<<<<<< HEAD
-=======
-  padding:3px;
->>>>>>> 0a286509ba4480bd53af16dd7dd4394fa621cba6
   grid-template-columns: repeat(10, 1fr);
 }
 .key {
