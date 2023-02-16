@@ -7,4 +7,5 @@ A clone of the popular game, Wordle, using Javascript. The main objective of the
 -the game works on mobile devices, ensuring that players can enjoy the game seamlessly on any device.
 
 #[Live Preview](https://incolorate.github.io/wordle/)
+
 ![Wordle](https://user-images.githubusercontent.com/88613908/219342331-6e619e1e-56cf-4bc0-aaca-787627db7fea.png)
