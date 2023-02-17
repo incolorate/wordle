@@ -87,7 +87,7 @@ function handleEnter() {
           textBox[row * WORD + i].classList.add("correct");
           currentGuessArray[i] = "";
           correctWordArray[i] = "";
-        } else if (currentGuessArray[i] === correctWordArray[j] && i !== j) {
+        } else if (currentGuessArray[i] === correctWordArray[j] && i != j) {
           // different place -> orange
           textBox[row * WORD + i].classList.add("close");
           currentGuessArray[i] = "";
@@ -99,11 +99,11 @@ function handleEnter() {
   // move to next row
   row++;
   // reset guess
-  currentGuess = "";
-  if (row === 6 && currentGuess !== correctWord) {
+  if (row === 6 && currentGuess != correctWord) {
     // display end game screen
     handleLoss();
   }
+  currentGuess = "";
 }
 
 //  Display winning screen
@@ -130,11 +130,12 @@ function handleWin() {
 function handleLoss() {
   let youLose = document.createElement("h1");
   let wordText = document.createElement("p");
-  let lossModal = document.querySelector(".end-modal");
+  let lossModal = document.querySelector(".lose-modal");
   wordText.innerText = `The word was: ${correctWord}`;
   youLose.innerText = `You lost! :( `;
   youLose.classList.add("lose");
-  lossModal.append(youLose, wordText);
+  lossModal.append(youLose);
+  lossModal.append(wordText);
   lossModal.classList.remove("hidden");
   resetButton.classList.remove("hidden");
 }

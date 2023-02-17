@@ -76,19 +76,40 @@
 }
 
 /* If win */
-.end-modal {
-  position: absolute;
+.end-modal,
+.lose-modal {
+  left: 0;
+  top: 0;
+  position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
   background-color: rgba(0, 0, 0, 0.9);
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  transition: 0.5s;
 }
-.end-modal > * {
+
+.lose-modal > * {
   background: none;
 }
+.lose-modal p {
+  font-size: 24px;
+  color: azure;
+  text-align: center;
+}
+.end-modal > * {
+  text-align: center;
+  font-size: 48px;
+  background: none;
+}
+
+.lose-modal h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
 .end-modal h1 {
   text-align: center;
   font-size: 48px;
