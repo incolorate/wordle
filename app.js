@@ -208,3 +208,21 @@ document.addEventListener("keyup", (e) => {
   }
 });
 keyBoard();
+
+// Instructions
+
+function popInstructions() {
+  let info = document.querySelector("#instruction-container");
+  if (info.style.display === "none") {
+    info.style.display = "flex";
+  } else if (info.style.display === "flex") {
+    info.style.display = "none";
+  }
+}
+
+document
+  .querySelector(".instructions-button")
+  .addEventListener("click", popInstructions);
+document.querySelector("#exit").addEventListener("click", popInstructions);
+
+// };
