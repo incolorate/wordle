@@ -29,7 +29,60 @@
   padding: 0;
   height: 1px;
 }
+/* Instruction */
+#exit {
+  border: 0;
+  font-size: 2rem;
+  color: red;
+  margin-left: 90%;
+}
+.green {
+  color: green;
+  font-weight: 800;
+}
+.yellow {
+  color: #dc7330;
+  font-weight: 800;
+}
+.grey {
+  color: gray;
+  font-weight: 800;
+}
 
+.instructions-button {
+  margin-top: 2%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  font-size: 24px;
+}
+
+#word-image {
+  width: 80%;
+}
+#instruction-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+#instruction-text {
+  color: white;
+  padding: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#instruction-text ul li {
+  padding: 6px;
+}
+#instruction-text p {
+  font-size: 1.2rem;
+}
 /* Game board */
 .game-area {
   display: flex;
@@ -185,5 +238,8 @@ form {
   }
   .key {
     font-size: 1.5rem;
+  }
+  .instructions-button {
+    font-size: 32px;
   }
 }

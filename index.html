@@ -10,8 +10,40 @@
   <body>
     <section>
       <h1 class="title">Wordle</h1>
+      <button type="button" class="instructions-button">❓</button>
       <div class="separator"></div>
     </section>
+
+    <div id="instruction-container" style="display: none">
+      <div id="instruction-text">
+        <button type="button" id="exit">X</button>
+        <h1>How to play:</h1>
+        <h2>Guess the word in 6 tries.</h2>
+        <ul>
+          <li>Each guess must be a valid 5 letter word.</li>
+          <li>
+            The color of the tiles will change to show how close your guess was
+            to the word
+          </li>
+        </ul>
+        <h2>Example</h2>
+        <img
+          src="./instructions.png"
+          alt="instructions"
+          loading="lazy"
+          id="word-image"
+        />
+        <p>
+          <span class="green">Green:</span> the letter is in the correct
+          position.
+        </p>
+        <p>
+          <span class="yellow">Yellow:</span> the letter is in the word but not
+          in the correct position.
+        </p>
+        <p><span class="grey">Grey:</span> the letter is not in the word.</p>
+      </div>
+    </div>
 
     <div class="game-area">
       <div class="end-modal hidden">
